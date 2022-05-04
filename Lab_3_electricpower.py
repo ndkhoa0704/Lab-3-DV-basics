@@ -60,11 +60,12 @@ def plot3(ax=None):
 
 
 def plot4():
-    fig, ax = plt.subplots(2, 2, figsize=(18, 7))
+    fig, ax = plt.subplots(2, 2, figsize=(20, 10))
     plot2(ax=ax[0, 0])
     plot2(col="Voltage", ax=ax[0, 1])
     plot3(ax=ax[1, 0])
     plot2(col="Global_reactive_power", ax=ax[1, 1])
+    fig.tight_layout()
     fig.savefig("plot4.png")
 
 
@@ -85,16 +86,16 @@ if __name__ == "__main__":
     df[numeric_cols] = df[numeric_cols].astype("float")
 
     # Plot and save image to file
-    fig, ax = plt.subplots(1, 1, figsize=(15, 7))
+    fig, ax = plt.subplots(1, 1, figsize=(15, 8))
     # Plot 1
     plot1(ax=ax)
     fig.savefig("plot1.png")
     # Plot 2
-    fig, ax = plt.subplots(1, 1, figsize=(15, 7))
+    fig, ax = plt.subplots(1, 1, figsize=(15, 8))
     plot2(ax=ax)
     fig.savefig("plot2.png")
     # Plot 3
-    fig, ax = plt.subplots(1, 1, figsize=(15, 7))
+    fig, ax = plt.subplots(1, 1, figsize=(15, 8))
     plot3(ax=ax)
     fig.savefig("plot3.png")
     # Plot 4
