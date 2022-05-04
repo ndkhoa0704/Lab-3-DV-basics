@@ -14,7 +14,7 @@ import matplotlib.dates as mdates
 
 ############################ Complete the following 4 functions ###############
 def plot1(ax=None):
-    ax.hist(df["Global_active_power"], color="r", bins=14, edgecolor="k", align="left")
+    ax.hist(df["Global_active_power"], color="r", bins=np.arange(0, 7, 0.5), edgecolor="k", align="left")
     ax.set_xticks(np.arange(0, 7, 2))
     ax.set_yticks(np.arange(0, 1400, 200))
     ax.spines[["top", "right"]].set_visible(False)
