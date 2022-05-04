@@ -14,7 +14,13 @@ import matplotlib.dates as mdates
 
 ############################ Complete the following 4 functions ###############
 def plot1(ax=None):
-    ax.hist(df["Global_active_power"], color="r", bins=np.arange(0, 7, 0.5), edgecolor="k", align="left")
+    ax.hist(
+        df["Global_active_power"],
+        color="r",
+        bins=np.arange(0, 7, 0.5),
+        edgecolor="k",
+        align="left",
+    )
     ax.set_xticks(np.arange(0, 7, 2))
     ax.set_yticks(np.arange(0, 1400, 200))
     ax.spines[["top", "right"]].set_visible(False)
@@ -22,9 +28,9 @@ def plot1(ax=None):
     ax.spines["bottom"].set_position(("axes", -0.05))
     ax.spines["left"].set_bounds(0, 1200)
     ax.spines["bottom"].set_bounds(0, 6)
-    ax.set_xlabel("Global Active Power (kilowatts)")
-    ax.set_ylabel("Frequency")
-    ax.set_title("Global Active Power", fontweight="bold", size=15)
+    ax.set_xlabel("Global Active Power (kilowatts)", size=20)
+    ax.set_ylabel("Frequency", size=20)
+    ax.set_title("Global Active Power", fontweight="bold", size=20)
     return ax
 
 
@@ -32,10 +38,10 @@ def plot2(col="Global_active_power", ax=None):
     ax.plot(df["datetime"], df[col], color="k")
     if col == "Global_active_power":
         ax.set_yticks(np.arange(0, 7, 2))
-        ax.set_ylabel("Global Active Power (kilowatts)",size=15)
+        ax.set_ylabel("Global Active Power (kilowatts)", size=20)
     else:
-        ax.set_ylabel(col,size=15)
-        ax.set_xlabel("datetime",size=15)
+        ax.set_ylabel(col, size=20)
+        ax.set_xlabel("datetime", size=20)
     ax.xaxis.set_major_locator(mdates.DayLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%a"))
     return ax
@@ -46,7 +52,7 @@ def plot3(ax=None):
     ax.plot(df["datetime"], df["Sub_metering_2"], color="r")
     ax.plot(df["datetime"], df["Sub_metering_3"], color="b")
     ax.set_yticks(np.arange(0, 40, 10))
-    ax.set_ylabel("Energy sub metering",size=15)
+    ax.set_ylabel("Energy sub metering", size=20)
     ax.xaxis.set_major_locator(mdates.DayLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%a"))
     ax.legend(["Sub_metering_1", "Sub_metering_2", "Sub_metering_3"])
