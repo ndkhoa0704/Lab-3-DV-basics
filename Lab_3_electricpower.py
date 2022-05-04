@@ -32,10 +32,10 @@ def plot2(col="Global_active_power", ax=None):
     ax.plot(df["datetime"], df[col], color="k")
     if col == "Global_active_power":
         ax.set_yticks(np.arange(0, 7, 2))
-        ax.set_ylabel("Global Active Power (kilowatts)")
+        ax.set_ylabel("Global Active Power (kilowatts)",size=15)
     else:
-        ax.set_ylabel(col)
-        ax.set_xlabel("datetime")
+        ax.set_ylabel(col,size=15)
+        ax.set_xlabel("datetime",size=15)
     ax.xaxis.set_major_locator(mdates.DayLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%a"))
     return ax
@@ -46,7 +46,7 @@ def plot3(ax=None):
     ax.plot(df["datetime"], df["Sub_metering_2"], color="r")
     ax.plot(df["datetime"], df["Sub_metering_3"], color="b")
     ax.set_yticks(np.arange(0, 40, 10))
-    ax.set_ylabel("Energy sub metering")
+    ax.set_ylabel("Energy sub metering",size=15)
     ax.xaxis.set_major_locator(mdates.DayLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%a"))
     ax.legend(["Sub_metering_1", "Sub_metering_2", "Sub_metering_3"])
